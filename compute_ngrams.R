@@ -20,13 +20,13 @@ df_us_sample <- c(sample(df_us_news, 2500),
                   sample(df_us_blogs, 2500),
                   sample(df_us_twits, 2500))
 
-corpus_news <- VCorpus(VectorSource(df_us_sample))
+corpus_sample <- VCorpus(VectorSource(df_us_sample))
 
-corpus_sample <- tm_map(corpus_news, tolower)
-corpus_sample <- tm_map(corpus_news, removeNumbers)
-corpus_sample <- tm_map(corpus_news, removePunctuation)
-corpus_sample <- tm_map(corpus_news, stripWhitespace)
-corpus_sample <- tm_map(corpus_news, PlainTextDocument)
+corpus_sample <- tm_map(corpus_sample, tolower)
+corpus_sample <- tm_map(corpus_sample, removeNumbers)
+corpus_sample <- tm_map(corpus_sample, removePunctuation)
+corpus_sample <- tm_map(corpus_sample, stripWhitespace)
+corpus_sample <- tm_map(corpus_sample, PlainTextDocument)
 
 # Count words and select top 15
 
